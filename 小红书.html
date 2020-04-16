@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .book{
+        display: none;
+    }
+    .book.active{
+        display: block;
+    }
+    .xiao.active{
+        font-weight: bold;
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        height: 30px;
+        background: white;
+        width: 100%;
+    }
+    .footer>.left-ul{
+        width: 40%;
+        float: left;
+    }
+    .footer>.left-ul>li{
+        list-style: none;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        width: 50%;
+        text-align: center;
+    }
+    .footer>.right-ul{
+        float:right;
+        width: 40%;
+    }
+    .footer>.right-ul>li{
+        list-style: none;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        width: 50%;
+        text-align: center;
+    }
+    .footer-add{
+        height: 30px;
+        line-height: 30px;
+        position: absolute;
+        left: 45%;
+        width: 10%;
+        text-align: center;
+        background: red;
+        border-radius: 20%;
+        color: white;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="w-shouye book active">首页</div>
+    <div class="z-shangcheng book">商城</div>
+    <div class="l-xiaoxi book">消息</div>
+    <div class="t-wo book">我</div>
+    <!-- 页脚的固定定位选项卡start -->
+    <div class="footer">
+        <ul class="left-ul">
+            <li class="xiao active">首页</li>
+            <li class="xiao">商城</li>
+        </ul>
+        <div class="footer-add">+</div>
+        <ul class="right-ul">
+            <li class="xiao">消息</li>
+            <li class="xiao">我</li>
+        </ul>
+    </div>
+    <!-- 页脚的固定定位选项卡end -->
+    <script>
+    var FooterLi = document.getElementsByClassName('xiao')
+    var FooterDiv = document.getElementsByClassName('book')
+    // console.log(FooterDiv)
+    var x = 0
+    for(var i=0;i<FooterLi.length;i++){
+        (function(index){
+            FooterLi[index].onclick = function(){
+                FooterLi[x].classList.remove('active')
+                FooterDiv[x].classList.remove('active')
+                FooterLi[index].classList.add('active')
+                FooterDiv[index].classList.add('active')
+                x = index
+            }
+        })(i)
+    }
+    
+    </script>
+</body>
+</html>
