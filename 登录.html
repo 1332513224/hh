@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>登录</title>
+    <style>
+        .loginModule {
+            border: 2px solid gray;
+            width: 100%;
+            position: relative;
+
+        }
+
+
+        #loginButton {
+            position: absolute;
+            right: 10px;
+            bottom: 15px;
+            width: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loginModule">
+        <h1>登录</h1>
+        <p>用户名： <input type="text" name="" id="Username"></p>
+
+        <p>密&nbsp;&nbsp;&nbsp;码： <input type="text" name="" id="Password"></p>
+
+        <button id="loginButton">确定登录</button>
+
+    </div>
+    <span>没有账号？</span><button id="zhuce">点击注册</button>
+    <script>
+        zhuce.onclick = function () {
+            window.location.href = '注册.html';
+        }
+        loginButton.onclick = function () {
+            if (Username.value && Password.value) {
+
+
+                for (var i = 0; i < sessionStorage.length; i++) {
+
+                    if (sessionStorage.key(i) == Username.value && sessionStorage.getItem(sessionStorage.key(i)) == Password.value) {
+                        alert('登录成功')
+                        window.location.href = '小红书.html';
+
+                        return
+                    } else if (i == sessionStorage.length - 1) {
+                        alert('用户名或密码错误')
+                        return
+                    }
+                }
+
+            } else {
+                alert('用户名或密码不得为空')
+            }
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

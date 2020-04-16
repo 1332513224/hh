@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>注册</title>
+    <style>
+        .registerModule {
+            border: 2px solid gray;
+            width: 100%;
+            position: relative;
+
+        }
+
+        #registerButton {
+            position: absolute;
+            right: 10px;
+            bottom: 15px;
+            width: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registerModule">
+        <h1>注册</h1>
+        <p>输入用户名： <input type="text" name="" id="inputUsername"></p>
+
+        <p>输入密&nbsp;&nbsp;&nbsp;码： <input type="text" name="" id="inputPassword"></p>
+
+        <button id="registerButton">确定注册</button>
+
+    </div>
+
+
+    <script>
+        registerButton.onclick = function () {
+            if (inputUsername.value && inputPassword.value) {
+
+
+                for (var i = 0; i < sessionStorage.length; i++) {
+
+                    if (sessionStorage.key(i) == inputUsername.value) {
+                        alert('用户名已被注册')
+                        return
+                    } else if (i == sessionStorage.length - 1) {
+                        sessionStorage.setItem(inputUsername.value, inputPassword.value)
+                        alert('注册成功')
+                        window.location.href = '登录.html';
+                        return
+                    }
+                }
+
+            } else {
+                alert('用户名或密码不得为空')
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
