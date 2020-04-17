@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .z-shangcheng{
+        width: 96%;
+        margin: auto;
+        /* border: 1px solid red; */
+    }
+    a{
+        text-decoration: none;
+        color: #888;
+    }
+    .z-title{
+        background: white;
+        height: 42px;
+        width: 100%;
+        /* border: 1px solid red; */
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .z-more{
+        left: 10px;
+        top: 3px;
+        position: absolute;
+        text-align: center;
+    }
+    .z-more>i{
+        position: absolute;
+        left: 4px;
+    }
+    .z-more>span{
+        position: absolute;
+        width: 24px;
+        top: 16px;
+        font-size:10px;
+    }
+    .z-input{
+        box-sizing: border-box;
+        height: 30px;
+        border-radius: 20px;
+        padding-left: 30px;
+        outline: none;
+        border: none;
+        background: #ddd;
+        position: absolute;
+        top: 5px;
+        width: 76%;
+        left: 50%;
+        margin-left: -38%;
+    }
+    .z-class{
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        text-align: center;
+    }
+    .z-class>i{
+        position: absolute;
+        right: 3px;
+    }
+    .z-class>span{
+        position: absolute;
+        width: 24px;
+        top: 16px;
+        right: -2px;
+        font-size:10px;
+    }
+    .z-search{
+        position: absolute;
+        left: 14%;
+        top: 9px;
+        color: #999;
+    }
+    .z-lunbo{
+        height: 120px;
+        width: 100%;
+        font-size: 100%;
+        overflow: hidden;
+        position: relative;
+        /* border: 1px solid green; */
+    }
+    .lb-img{
+        height: 120px;
+        float: left;
+        display: none;
+    }
+    .lb-img.show{
+        display: block;
+    }
+    .z-lunbo>ul{
+        position: absolute;
+        left: 50%;
+        margin-left: -25px;
+        bottom: 10px;
+    }
+    .lb-li{
+        text-align: center;
+        list-style: none;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background: black;
+        float: left;
+        margin-right: 10px;
+    }
+    .lb-li:last-of-type{
+        margin-right: 0;
+    }
+    .lb-li.show{
+        background: orange;
+    }
+    .z-guarantee{
+        background: white;
+        height: 30px;
+        font-size: 8px;
+        line-height: 30px;
+    }
+    .z-guarantee>li{
+        list-style: none;
+        width: 24%;
+        float: left;
+        color: #888;
+        text-align: center;
+    }
+    .z-guarantee>span{
+        float: left;
+    }
+    .z-brand{
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+    .z-BrandImg{
+        height: 210px;
+    }
+    .z-limited{
+        height: 240px;
+    }
+    .z-limited>div{
+        height: 119px;
+        width: 100%;
+        margin-top: 2px;
+    }
+    .z-limited-box>div{
+        border-radius: 5px;
+        height: 119px;
+        width: 49.5%;
+        background: white;
+        float: left;
+        position: relative;
+    }
+    .z-limited-box img{
+        height: 60px;
+    }
+    .z-limited-box>div:last-of-type{
+        float: right;
+    }
+    .z-limited-title{
+        position: absolute;
+        font-size: 14px;
+        left: 6px;
+        top: 6px;
+    }
+    .z-limited-con{
+        position: absolute;
+        font-size: 10px;
+        color: #333;
+        left: 6px;
+        top: 24px;
+    }
+    .z-limited-img-left{
+        position: absolute;
+        left: 6px;
+        bottom: 6px;
+    }
+    .z-limited-img-right{
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+    }
+    .z-option-title{
+        height:40px;
+        line-height: 40px;
+    }
+    .z-option-title>li{
+        list-style: none;
+        float: left;
+        width: 16.6%;
+        height: 30px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .z-option-title>li.active{
+        font-weight: bold;
+        border-bottom: 2px solid red;
+    }
+    /* .z-option-con{ */
+        /* height: 200px; */
+        /* border: 1px solid green; */
+    /* } */
+    .z-option-div{
+        display: none;
+    }
+    .z-option-div.show{
+        height: 200px;
+        display: block;
+    }
+    .z-option-div>div{
+        /* height: 500px; */
+        border-radius: 5px;
+        background: white;
+        float: left;
+        width: 49.5%;
+    }
+    .z-option-div>div:last-of-type{
+        float: right;
+    }
+    .z-option-divbox>p{
+        margin-left: 6px;
+        font-size: 10px;
+    }
+    .z-option-divbox>span{
+        margin-left: 6px;
+        font-weight: bold;
+        font-size: 8px;
+        color: red;
+    }
+    .z-more-box{
+        background: rgba(0,0,0,0.5);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+    }
+    .z-more-box.noshow{
+        display: none;
+    }
+    .z-more-con{
+        position: absolute;
+        height: 200px;
+        top: 0;
+        z-index: 10;
+        left: 0;
+        width: 100%;
+        background: #ddd;
+        border-radius: 0 0 5px 5px;
+    }
+    .z-more-con.noshow{
+        display: none;
+    }
+    .z-more-con>p{
+        position: absolute;
+        top: 30px;
+        left: 5%;
+    }
+    .z-more-con>i{
+        position: absolute;
+        right: 5%;
+        top: 34px;
+    }
+    .z-more-con>ul{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        top: 50px;
+    }
+    .z-more-con>ul>li{
+        position: relative;
+        float: left;
+        margin-left: 5%;
+        margin-top: 10px;
+        list-style: none;
+        height: 58px;
+        border-radius: 5px;
+        width: 18.75%;
+        background: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    .z-more-con>ul>li>i{
+        margin-top: 12px;        
+    }
+    .z-more-con>ul>li>span{
+        font-size: 10px;
+        width: 60px;
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        margin-left:-30px; 
+    }
+    .z-class-con{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .z-class-con.noshow{
+        display: none;
+    }
+    .z-class-con>i{
+        position: absolute;
+        left: 5%;
+        top: 2%;
+        font-size: 20px;
+    }
+    .z-class-con>p{
+        position: absolute;
+        top: 2%;
+        left: 50%;
+    }
+    .z-class-con-bottom{
+        height: 92%;
+        width: 100%;
+        background: #ddd;
+        margin-top: 9%;
+    }
+    </style>
+</head>
+<body style="background: #eee;">
+    <div class="z-shangcheng book">
+        <div class="z-title">
+            <span class="z-more"><i class="fa fa-list-alt"></i><br><span>更多</span></span>
+            <input class="z-input" type="text" placeholder="大家都在搜“啦啦啦啦”">
+            <span class="z-search"><i class="fa fa-search"></i></span>
+            <span class="z-class"><i class="fa fa-th-large"></i><br><span>分类</span></span>
+        </div>
+        <div class="z-more-box noshow">
+        </div>
+        <div class="z-more-con noshow">
+            <p>更多功能</p>
+            <i class="fa fa-close z-more-con-i"></i>
+            <ul>
+                <li><i class="fa fa-shopping-cart"></i><span>购物车</span></li>
+                <li><i class="fa fa-file-text-o"></i><span>订单</span></li>
+                <li><i class="fa fa-credit-card"></i><span>卡券</span></li>
+                <li><i class="fa fa-file-zip-o"></i><span>心愿单</span></li>
+                <li><i class="fa fa-vimeo"></i><span>小红卡会员</span></li>
+                <li><i class="fa fa-headphones"></i><span>客服</span></li>
+                <li><i class="fa fa-map-marker"></i><span>地址管理</span></li>
+            </ul>
+        </div>
+        <div class="z-class-con noshow">
+            <i class="fa fa-angle-left z-fanhui"></i>
+            <p>分类</p>
+            <div class="z-class-con-bottom">
+
+            </div>
+        </div>
+        <div class="z-lunbo">
+            <img class="lb-img show" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587032965373&di=8d88b35168bc923dd6a148928a679115&imgtype=0&src=http%3A%2F%2Fbbs.jooyoo.net%2Fattachment%2FMon_0905%2F24_65548_2835f8eaa933ff6.jpg" alt="">
+            <img class="lb-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587035655383&di=1a204a95cfb49f6fb439dd1cf1d9c7e4&imgtype=0&src=http%3A%2F%2Fa3.att.hudong.com%2F14%2F75%2F01300000164186121366756803686.jpg" alt="">
+            <img class="lb-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587035655382&di=dd124773dedc138e122090143262e98a&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F64%2F76%2F20300001349415131407760417677.jpg" alt="">
+            <img class="lb-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587035655374&di=feb9b389b86bf98730b3f9b61d8615d9&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F22%2F59%2F19300001325156131228593878903.jpg" alt="">
+            <ul>
+                <li class="lb-li show"></li>
+                <li class="lb-li"></li>
+                <li class="lb-li"></li>
+                <li class="lb-li"></li>
+            </ul>
+        </div>
+        <ul class="z-guarantee">
+            <li><a href="http://www.baidu.com">全球之采</a></li><span>|</span>
+            <li><a href="http://www.baidu.com">正品保证</a></li><span>|</span>
+            <li><a href="http://www.baidu.com">售后无忧</a></li><span>|</span>
+            <li><a href="http://www.baidu.com">假一赔十</a></li>
+        </ul>
+        <div class="z-brand">
+            <a href="http://www.baidu.com"><img class="z-BrandImg" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587041901953&di=0d35296a5de184f13132f55e5a2941df&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F57%2F92%2F01300542193590138063924441627.jpg" alt=""></a>
+        </div>
+        <div class="z-limited">
+            <div class="z-limited-top z-limited-box">
+                <div>
+                    <span class="z-limited-title">限时购买</span>
+                    <span class="z-limited-con">每天10点，限时限量</span>
+                    <img class="z-limited-img-left" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387486&di=36184a55566c1056ea82527714dc5447&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160531%2F9-160531224339.jpg" alt="">
+                    <img class="z-limited-img-right" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587043087859&di=7704db1bff27dfdfd267ea180166f362&imgtype=0&src=http%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F9e31678cgy1ffid5rbncvj209q09qjrm.jpg" alt="">
+                </div>
+                <div>
+                    <span class="z-limited-title">限时购买</span>
+                    <span class="z-limited-con">每天10点，限时限量</span>
+                    <img class="z-limited-img-left" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387485&di=f17f2a38f35a410bda1df7e2d6e35db2&imgtype=0&src=http%3A%2F%2Fimg.smzy.com%2Fimges%2F2017%2F0320%2F20170320102531640.jpg" alt="">
+                    <img class="z-limited-img-right" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094430533&di=9a0008b949a2fdc756147997c107975e&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2F7fd15a086d21307f.jpg" alt="">
+                </div>
+            </div>
+            <div class="z-limited-bottom z-limited-box">
+                <div>
+                    <span class="z-limited-title">限时购买</span>
+                    <span class="z-limited-con">每天10点，限时限量</span>
+                    <img class="z-limited-img-left" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387483&di=48b4e309397786fa46269e48bb7d830a&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2F4c03dfc1807e4985.jpg" alt="">
+                    <img class="z-limited-img-right" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387483&di=fe0dc72585e24528eceba690c2d0f46a&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2F36f66632597ee05e.jpg" alt="">
+                </div>
+                <div>
+                    <span class="z-limited-title">限时购买</span>
+                    <span class="z-limited-con">每天10点，限时限量</span>
+                    <img class="z-limited-img-left" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387478&di=9589d65c91fd37b9f90c64f0cf938a10&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F61a965580f53bbdda62e84ed7c0d958189608dbfd8ef-7wLd6D_fw658" alt="">
+                    <img class="z-limited-img-right" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387478&di=b32b72af9e5a5753fb28e829355f79f0&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2F2c61a7cab09864fa.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <ul class="z-option-title">
+            <li class="z-option-li active">推荐</li>
+            <li class="z-option-li">服装</li>
+            <li class="z-option-li">内衣</li>
+            <li class="z-option-li">母婴</li>
+            <li class="z-option-li">家居</li>
+            <li class="z-option-li">配饰</li>
+        </ul>
+        <div class="z-option-con">
+            <div class="z-option-div show">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=e715f8a7400c07feba7f4fff1e9d4ad0&imgtype=0&src=http%3A%2F%2Fpic.962.net%2Fup%2F2018-5%2F2018525143726653750.png" alt="">
+                    <p>选项卡一对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=563cc1762aef8a0e440fa53ea39d1cde&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Ffb11be547121ef35.jpg" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+            <div class="z-option-div">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=22808092,2240242456&fm=26&gp=0.jpg" alt="">
+                    <p>选项卡二对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=563cc1762aef8a0e440fa53ea39d1cde&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Ffb11be547121ef35.jpg" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+            <div class="z-option-div">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094500658&di=2138f3dd6e2e4840ed2a3ebdc14fc0c3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F0%2F45%2F4c0a4c5bf9_250_350.jpg" alt="">
+                    <p>选项卡三对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=563cc1762aef8a0e440fa53ea39d1cde&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Ffb11be547121ef35.jpg" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+            <div class="z-option-div">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094500657&di=bc78b24c826a9fddf5d822ea4a4c221a&imgtype=0&src=http%3A%2F%2Fwww.17qq.com%2Fimg_biaoqing%2F29545814.jpeg" alt="">
+                    <p>选项卡四对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=563cc1762aef8a0e440fa53ea39d1cde&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Ffb11be547121ef35.jpg" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+            <div class="z-option-div">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=e715f8a7400c07feba7f4fff1e9d4ad0&imgtype=0&src=http%3A%2F%2Fpic.962.net%2Fup%2F2018-5%2F2018525143726653750.png" alt="">
+                    <p>选项卡五对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094500655&di=4703a2564f3fbadff2604325df2c9d0e&imgtype=0&src=http%3A%2F%2Fimg.99danji.com%2Fuploadfile%2F2018%2F0515%2F20180515123709703.gif" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+            <div class="z-option-div">
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094500652&di=b575e08ea8e3e493ce6792b192dec53b&imgtype=0&src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20190624%2F13%2F1561354846-otqrFVwuEY.jpg" alt="">
+                    <p>选项卡六对应</p>
+                    <span>￥9.99</span>
+                </div>
+                <div class="z-option-divbox">
+                    <img class="z-option-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587094387477&di=563cc1762aef8a0e440fa53ea39d1cde&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Ffb11be547121ef35.jpg" alt="">
+                    <p>走过路过不要错过了</p>
+                    <span>￥19.99</span>
+                </div>
+            </div>
+                                                        
+        </div>
+   
+    </div>
+    <script>
+    var imgsW = document.getElementsByClassName('lb-img')
+    var lunboW = document.getElementsByClassName('z-lunbo')
+    for(var i=0;i<imgsW.length;i++){
+        imgsW[i].style.width = (lunboW[0].offsetWidth-0) + 'px'
+    }
+    var lunbonum = 0
+    var LbLis = document.getElementsByClassName('lb-li')
+    setInterval(function(){
+        imgsW[lunbonum].classList.remove('show')
+        LbLis[lunbonum].classList.remove('show')
+        if(lunbonum == imgsW.length-1){
+            lunbonum = 0
+        }else{
+            lunbonum++
+        }
+        imgsW[lunbonum].classList.add('show')
+        LbLis[lunbonum].classList.add('show')
+    },3000)
+    var BrandImg = document.getElementsByClassName('z-BrandImg')[0]
+    BrandImg.style.width = lunboW[0].offsetWidth + 'px'
+    var OptionDiv = document.getElementsByClassName('z-option-con')[0]
+    var OptionImg = document.getElementsByClassName('z-option-img')
+    for(var i=0;i<OptionImg.length;i++){
+        OptionImg[i].style.width = OptionDiv.offsetWidth*0.495 + 'px'
+        OptionImg[i].style.height = OptionDiv.offsetWidth*0.495 + 'px'
+    }
+    var OptionLi = document.getElementsByClassName('z-option-li')
+    var OptionCon = document.getElementsByClassName('z-option-div')
+    var OptionNum = 0
+    for(var i=0;i<OptionLi.length;i++){
+        (function(index){
+            OptionLi[index].onclick = function(){
+                OptionLi[OptionNum].classList.remove('active')
+                OptionCon[OptionNum].classList.remove('show')
+                OptionLi[index].classList.add('active')
+                OptionCon[index].classList.add('show')
+                OptionNum = index
+            }
+        })(i)
+    }
+    
+    var Zmore = document.getElementsByClassName('z-more')[0]
+    Zmore.onclick = function(){
+        TitleMoreBox.classList.remove('noshow')
+        TitleMoreBox1.classList.remove('noshow')
+    }
+    var TitleClose = document.getElementsByClassName('z-more-con-i')[0]
+    var TitleMoreBox = document.getElementsByClassName('z-more-box')[0]
+    var TitleMoreBox1 = document.getElementsByClassName('z-more-con')[0]
+    TitleClose.onclick = function(){
+        Zclose()
+    }
+    TitleMoreBox.onclick = function(){
+        Zclose()
+    }
+    function Zclose(){
+        TitleMoreBox.classList.add('noshow')
+        TitleMoreBox1.classList.add('noshow')
+    }
+    var ZClass = document.getElementsByClassName('z-class')[0]
+    var ZClassCon = document.getElementsByClassName('z-class-con')[0]
+    var ZClassClose = document.getElementsByClassName('z-fanhui')[0]
+    ZClass.onclick = function(){
+        ZClassCon.classList.remove('noshow')
+    }
+    ZClassClose.onclick = function(){
+        ZClassCon.classList.add('noshow')
+    }
+    </script>
+</body>
+</html>
