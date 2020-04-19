@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Redbook</title>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
     <style>
         * {
             margin: 0;
@@ -72,6 +73,228 @@
             color: white;
             font-size: 20px;
         }
+
+        /* 个人中心style */
+        .t-center{
+            margin:0 2%;
+        }
+        .t-fl{
+            float:left;
+        }
+        .t-clear::after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .t-header{
+            width:100%;
+            height:30px;
+            padding:20px 0;
+            border-bottom: #ccc 1px solid;
+            position: relative;
+        }
+        .t-header i{
+            color:#141414;
+            font-size: 30px;
+        }
+        .t-header>div>i:last-of-type{
+            float:right;
+        }
+        .t-header .user{
+            text-align: center;
+            width:300px;
+            margin:0 14%;
+        }
+        .t-header .user p:first-of-type{
+            color:#424242;
+            font-size:25px;
+            position: relative;
+            top:-10px;
+        }
+        .t-header .user p:last-of-type{
+            color:#D7D7D7;
+            position: relative;
+            top:-10px;
+        }
+        .t-header .t-mask{
+            position:fixed;
+            top:0;
+            left:0;
+            background:rgba(0,0,0,0.5);
+            width:100%;
+            height:100%;
+        }
+        .t-header .t-more{
+            position:fixed;
+            top:0;
+            left:0;
+            background: #fff;
+            width:52%;
+            height:100%;
+            padding: 63px 0 30px 30px;
+            z-index: 1;
+        }
+        .t-header .t-more>p{
+            font-size: 30px;
+            font-weight:520;
+            margin-bottom: 23px;
+        }
+        .t-header .t-more ul{
+            list-style: none;
+        }
+        .t-header .t-more li{
+            height:66px;
+            line-height: 66px;
+        }
+        .t-header .t-more li i{
+            color:#ECECEC;
+            font-size: 23px;
+            position: relative;
+            top:6px;
+            margin-right: 18px;
+        }
+        .t-header .t-maskbox{
+            display: none;
+        }
+        .t-data{
+            width:100%;
+            height:95px;
+            padding:30px 0;
+            position: relative;
+            /* background: red; */
+        }
+        .t-data img{
+            border-radius: 1300px;
+            width:100px;
+        }
+        .t-data .t-number{
+            width:100px;
+            text-align: center;
+            margin-left:20px;
+        }
+        .t-data .t-number p:first-of-type{
+            font-size: 20px;
+        }
+        .t-data .t-number p:last-of-type{
+            font-size: 15px;
+        }
+        .t-data .t-edit{
+            font-size: 20px;
+            width:163px;
+            height:20px;
+            line-height: 20px;
+            padding:7px 52px;
+            text-align: center;
+            margin-top: 13px;
+            margin-left: 20px;
+            border:2px #EDEDED solid;
+            border-radius: 30px;
+        }
+        .t-data .t-setup{
+            font-size: 25px;
+            width:45px;
+            height:20px;
+            line-height: 20px;
+            margin-top: 13px;
+            margin-left: 10px;
+            padding:7px 13px;
+            text-align: center;
+            border:2px #EDEDED solid;
+            border-radius: 30px;
+        }
+        .t-data input{
+            position: absolute;
+            width:100px;
+            height: 100px;
+            background: aqua;
+            border-radius: 130px;
+            top:30px;
+            left:10px;
+            opacity:0;
+        }
+        .t-introducion{
+            width:100%;
+            height:30px;
+            line-height: 30px;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .t-introducion div>i{
+            position: relative;
+            top:8px;
+            color:#FD6175 ;
+        }
+        .t-introducion span{
+            background:#EBEBEB;
+            width:2px;
+            height:15px;
+            position: relative;
+            top:9px;
+            margin:0 15px;
+        }
+        .t-introducion a{
+            color:#EBEBEB;
+            margin-left:3px;
+        }
+        .t-introducion p i{
+            margin-right:5px;
+            color:#DFDFDF;
+        }
+        .t-introducion p .star{
+            color:#FF5D6B;
+        }
+        .t-details{
+            border-top:1px solid #F5F5F5;
+            border-bottom:1px solid #F5F5F5;
+            margin-top:15px;
+            padding:10px 0px;
+        }
+        .t-details .mainul{
+            list-style: none;
+            margin-left:150px;
+            height:30px;
+        }
+        .t-details .mainul li{
+            float: left;
+            margin:0 18px;
+        }
+        .t-details .mainul .t-active{
+            border-bottom: 2px solid #FF2741;
+        }
+        .t-details .tdiv{
+            display: none;
+        }
+        .t-details .tdiv.t-show{
+            display: block;
+        }
+        .t-note,.t-collection,.t-liked{
+            background: #FAFAFA;
+            width:100%;
+            height:210px;
+        }
+        .t-details .t-collection ul{
+            list-style: none;
+            height: 34px;
+            width: 100%;
+            background: #fff;
+        }
+        .t-details .t-collection li{
+            float: left;
+            margin:2px 10px;
+            padding: 2px 15px;
+            background: #fff;
+        }
+        .t-details .t-collection li.t-cactive{
+            padding: 2px 15px;
+            background: #ccc;
+            border-radius: 20px;
+        }
+        .t-details .t-collection .tcdiv{
+            display: none;
+        }
+        .t-details .t-collection .t-cshow{
+            display: block;
+        }
     </style>
 </head>
 
@@ -79,7 +302,110 @@
     <div class="w-shouye book active">首页</div>
     <div class="z-shangcheng book">商城</div>
     <div class="l-xiaoxi book">消息</div>
-    <div class="t-wo book">我</div>
+    <div class="t-wo book">
+        <!-- 页眉start -->
+        <div class='t-header'>
+            <div class='t-center t-clear'>
+                <i class="fa fa-bars t-fl tbar"></i>
+                <div class='t-maskbox'>
+                    <div class='t-mask'></div>
+                    <div class='t-more'>
+                        <p>更多</p>
+                        <ul>
+                            <li><i class="fa fa-user-plus"></i>发现好友</li>
+                            <li><i class="fa fa-shopping-basket"></i>我的草稿</li>
+                            <li><i class="fa fa-shopping-cart"></i>购物车</li> 
+                            <li><i class="fa fa-list-alt"></i>订单</li>
+                            <li><i class="fa fa-tag"></i>卡券</li>
+                            <li><i class="fa fa-shopping-bag"></i>心愿单</li>
+                            <li><i class="fa fa-registered"></i>小红卡会员</li>
+                            <li><i class="fa fa-key"></i>免流量</li>
+                            <li><i class="fa fa-credit-card"></i>钱包</li>
+                            <li><i class="fa fa-question-circle"></i>帮助与客服</li>
+                            <li><i class="fa fa-minus-square-o"></i>扫一扫</li>
+                            <li><i class="fa fa-cog"></i>设置</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='t-fl user'>
+                    <p class='t-name'>用户名</p>
+                    <p>小红书号:123456789</p>
+                </div>
+                <i class="fa fa-share-square-o"></i>
+            </div>
+        </div>
+        <!-- 页眉end -->
+        <!-- 头像模块start -->
+        <div class='t-data'>
+            <div class='t-center'>
+                <!-- <div class='t-headPortrait'></div> -->
+                <img class='t-fl headPortrait' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587035674718&di=d31c981b4dce8dc4bcece63d9dba1459&imgtype=0&src=http%3A%2F%2Fwww.17qq.com%2Fimg_qqtouxiang%2F75876952.jpeg">
+                <input type="file" class='upload'>
+                <div class='t-number t-fl'>
+                    <p>0</p>
+                    <p>关注</p>
+                </div>
+                <div class='t-number t-fl'>
+                    <p>0</p>
+                    <p>粉丝</p>
+                </div>
+                <div class='t-number t-fl'>
+                    <p>0</p>
+                    <p>获赞与收藏</p>
+                </div>
+                <div class='t-edit t-fl'>编辑资料</div>
+                <div class='t-setup t-fl'><i class="fa fa-cog"></i></div>
+            </div>
+        </div>
+        <!-- 头像模块end -->
+        <!-- 信息简介start -->
+        <div class='t-introducion'>
+            <div class='t-center'>
+                <i class="fa fa-mars t-fl"></i>
+                <span class='t-fl'></span>
+                <p class='t-fl'>完善你的位置信息</p>
+                <a class='t-fl'>></a>
+                <span class='t-fl'></span>
+                <p class='t-fl'><i class="fa fa-graduation-cap"></i>解锁等级</p>
+                <span class='t-fl'></span>
+                <p class='t-fl'><i class="fa fa-star star"></i>成为会员</p>
+                <a class='t-fl'>></a>
+            </div>
+        </div>
+        <!-- 信息简介end -->
+        <!-- 个签start -->
+        <div class='t-signature'>
+            <div class='t-center'>
+                <p>愿你永怀善意，清澈明朗</p>
+            </div>
+        </div>
+        <!-- 个签end -->
+        <!-- 主页详情start -->
+        <div class='t-details'>
+            <div class='t-center'>
+                <ul class='mainul'>
+                    <li class='t-active tli'>笔记</li>
+                    <li class='tli'>收藏</li>
+                    <li class='tli'>赞过</li>
+                </ul>
+            </div>
+            <div class='t-note t-show tdiv'>还没有发表过的笔记哦</div>
+            <div class='t-collection tdiv'>
+                <ul>
+                    <li class='t-cactive tcli'>笔记·0</li>
+                    <li class='tcli'>标签·0</li>
+                    <li class='tcli'>专辑·0</li>
+                    <li class='tcli'>滤镜·0</li>
+                </ul>
+                <div class='tcdiv t-cshow'>你还没有收藏任何笔记哦</div>
+                <div class='tcdiv'>你还没有收藏任何标签哦</div>
+                <div class='tcdiv'>你还没有创建任何专辑哦</div>
+                <div class='tcdiv'>你还没有收藏任何滤镜哦</div>
+            </div>
+            <div class='t-liked tdiv'>还没有赞过的笔记哦</div>
+        </div>
+        <!-- 主页详情end -->
+    </div>
     <!-- 页脚的固定定位选项卡start -->
     <div class="footer">
         <ul class="left-ul">
@@ -88,8 +414,8 @@
         </ul>
         <div class="footer-add">+</div>
         <ul class="right-ul">
-            <li class="xiao">消息</li>
-            <li class="xiao">我</li>
+            <li class="xiao lxiaoxi">消息</li>
+            <li class="xiao two">我</li>
         </ul>
     </div>
     <!-- 页脚的固定定位选项卡end -->
@@ -109,9 +435,66 @@
                 }
             })(i)
         }
-        document.getElementsByClassName("right-ul")[0].onclick = function () {
+        document.getElementsByClassName("lxiaoxi")[0].onclick = function () {
             window.location.href = '消息.html'
         }
+        
+        
+        // 我-个人中心界面 t-wo
+        // 更多
+        var tbar = document.getElementsByClassName('tbar')[0]
+        var tmaskbox = document.getElementsByClassName('t-maskbox')[0]
+        var tmask = document.getElementsByClassName('t-mask')[0]
+        tbar.onclick=function(){
+            tmaskbox.style.display='block'
+        }
+        tmask.onclick=function(){
+            tmaskbox.style.display='none'
+        }
+        // 上传头像
+        var tipt = document.getElementsByClassName('upload')[0]
+        var headPortrait = document.getElementsByClassName('headPortrait')[0]
+        tipt.onchange = function(){
+            var read = new FileReader()
+            read.readAsDataURL(this.files[0])
+            read.onload=function(){
+                headPortrait.src = read.result  //头像切换
+                img.width = '130'
+                img.height = '130'
+            }
+        }
+        // 详情的选项卡
+        var tli = document.getElementsByClassName('tli')
+        var tdiv = document.getElementsByClassName('tdiv')
+        var tcli = document.getElementsByClassName('tcli')
+        var tcdiv = document.getElementsByClassName('tdiv')
+        for(var i=0;i<tli.length;i++){
+            tli[i].index=i  //存下标      
+            tli[i].onclick=function(){
+                for(var j=0;j<tli.length;j++){
+                    tli[j].classList.remove('t-active')
+                    tdiv[j].classList.remove('t-show')
+                }
+                this.classList.add('t-active')
+                tdiv[this.index].classList.add('t-show')
+            }
+        }
+        for(var i=0;i<tcli.length;i++){
+            tcli[i].index=i
+            tcli[i].onclick=function(){
+                for(var j=0;j<tcli.length;j++){
+                    tcli[j].classList.remove('t-cactive')
+                    // tcdiv[j].classList.remove('t-cshow')  //Cannot read property 'classList' of undefined
+                }
+                this.classList.add('t-cactive')
+                // tcdiv[this.index].classList.add('t-cshow')  //Cannot read property 'classList' of undefined
+                console.log(this.index)
+            }
+        }
+
+        // 获取用户名
+        // var tname = document.getElementsByClassName("t-name")[0]
+        // tname.innerHTML = document.cookie
     </script>
 </body>
 
