@@ -644,16 +644,23 @@
         list-style: none;
     }
     .w-top>ul{
-        box-sizing: border-box;
+        display: flex;
         width: 100%;
         height: 40px;
-        padding-top: 10px;
-        padding-left: 50px;
+        align-items: center;
+        justify-content: center;
     }
     .w-top>ul>li{
-        margin-left: 40px;
+        width: 40px;
+        text-align: center;
         font-size: 18px;
         color: rgb(134, 134, 134);
+    }
+    .w-top>ul>li.active{
+        border-bottom: 2px solid red;
+    }
+    .w-top>ul>li:nth-of-type(2){
+        margin: 0 10%;
     }
     .w-top .active{
         color: black;
@@ -670,20 +677,20 @@
         font-size: 16px;
         outline: none;
         padding: 0 5px;
-        margin-top: 10px;
+        margin-top: 8px;
         border: 1px solid transparent;
     }
     .w-top>input::placeholder{
         text-align: center;
     }
-    .w-top>p{
-        position: relative;
-        left: 168px;
+    /*.w-top>p{
+        position: absolute;
+        left: 45%;
         width: 35px;
         height: 2px;
-        margin-top: -5px;
+        margin-top: -8px;
         background: red;
-    }
+    }*/
     .w-top i{
         position: absolute;
         color: rgb(134, 134, 134);
@@ -736,6 +743,7 @@
         display: none;
     }
     .w-shade .w-box-top{
+        display: flex;
         position: fixed;
         width: 100%;
         height: 50px;
@@ -751,11 +759,9 @@
         color: rgb(134, 134, 134);
     }
     .w-shade .w-box-top>p{
-        position: absolute;
-        left: 110px;
         text-align: center;
         font-size: 18px;
-        width: 150px;
+        width: 100%;
         color: black;
     }
     .w-shade .w-box-content{
@@ -889,7 +895,7 @@
         position: absolute;
         top: 10px;
         left: 40px;
-        width: 280px;
+        width: 70%;
         height: 28px;
         outline: none;
         border-radius: 20px;
@@ -899,8 +905,10 @@
         font-size: 16px;
     }
     .w-search-top>p{
+        width: 50px;
         position: absolute;
         right: 12px;
+        text-align: center;
         font-size: 18px;
         color: rgb(134, 134, 134);
     }
@@ -922,7 +930,6 @@
             </ul>
             <p class="w-line"></p>
             <input class="w-search" type="text" placeholder="大家都在搜 “星空吐司”">
-            <i class="fa fa-search"></i>
         </div>
         <div class="w-search-box">
             <div class="w-search-top clear">
